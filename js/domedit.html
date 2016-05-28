@@ -1,0 +1,19 @@
+<!-- 在div前面加上一个标签 -->
+<!-- 基础中的基础考察  居然没答上来！！！！忘记哪个是之前插入了，一时没想起来。 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div></div>
+	<p></p>
+	<span></span>
+</body>
+<script type="text/javascript">
+	var divele=document.getElementsByTagName("div")[0];
+	var newele=document.createElement("p");
+	document.body.insertBefore(newele,divele);
+</script>
+</html>

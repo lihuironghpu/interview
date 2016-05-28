@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		/* 原来效果 */
+/* 		ul{
+			height: 300px;
+		}
+		li{
+			height: 100px;
+			background: #ddd;
+		} */
+
+
+		/* 方法1 */
+		/* li竖着排列，只能显示三个li，溢出后设置换行 */
+/* 		ul{
+			display: flex;
+			display: -webkit-flex;
+			height: 300px;
+			flex-direction: column;
+			flex-wrap: wrap;
+		}
+		li{
+			height: 100px;
+			background: #ddd;
+		} */
+
+		/* 方法2 */
+		ul{
+			height: 300px;
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			height: 100px;
+			background: #ddd;
+			list-style: none;
+		}
+		li:nth-child(1),
+		li:nth-child(2),
+		li:nth-child(3){
+			margin-right: 66.66%;
+		}
+		li:nth-child(4){
+			margin-top: -300px;
+		}	
+		li:nth-child(4),
+		li:nth-child(5),
+		li:nth-child(6){
+			margin-left: 33.33%;
+			margin-right: 33.33%;
+		}
+		li:nth-child(7){
+			margin-top: -300px;
+		}	
+		li:nth-child(7),
+		li:nth-child(8),
+		li:nth-child(9){
+			margin-left: 66.66%;
+		}
+
+
+	</style>
+</head>
+<body>
+	<ul>
+		<li>01</li>
+		<li>02</li>
+		<li>03</li>
+		<li>04</li>
+		<li>05</li>
+		<li>06</li>
+		<li>07</li>
+		<li>08</li>
+		<li>09</li>
+	</ul>
+</body>
+</html>

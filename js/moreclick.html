@@ -1,0 +1,53 @@
+<!-- 达到点击三个元素，弹出helloWorld 居然没答上来！！！！ 知道，写不出来-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		div,span,p{
+			float: left;
+			width: 100px;
+			height: 100px;
+			background: #2c95c4;
+			margin: 0 20px;
+		}
+	</style>
+	<script>
+		// 方法1直接元素绑定onclick
+		function divclick(){
+			alert("hello world!");
+		}
+		// 方法2动态绑定onclick
+		window.onload=function(){
+			var spanEle = document.getElementsByTagName("span")[0];
+			spanEle.onclick=function(){
+				alert("hello world!");
+			}
+
+			// 方法3绑定事件监听
+			var pEle = document.getElementsByTagName("p")[0];
+			if(document.addEventListener){
+				// 非IE
+				pEle.addEventListener('click',showalert,true);
+				// 最后一个参数，指定是否绑定在捕获阶段，true为是，false为否，默认为true
+				
+			}else{
+				// IE
+				pEle.attachEvent('onclick',showalert);
+			}
+
+		}
+		function showalert(){
+			alert("hello world!");
+		}
+	</script>
+</head>
+<body>
+	<div onclick="divclick()"></div>
+	<span></span>
+	<p></p>
+</body>
+</html>

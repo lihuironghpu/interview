@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		section{
+			margin: 10px;
+			float: left;
+		}
+		div{
+			display: inline-block;
+			width: 100px;
+			height: 100px; 
+			background-color: #ddd;
+			vertical-align: top;/*不写该句的话，会导致第二个div和第一个不对齐*/
+		}
+		.fmargin{
+			margin-right: -4px;
+		}
+		.container01{
+			display: table;
+		}
+		.container02{
+			font-size: 0;
+			-webkit-text-size-adjust: none;/* 去掉chrome最小字体限制 */
+		}
+		.container03{
+			letter-spacing: -4px;
+		}
+		.container04{
+			word-spacing: -4px;
+		}
+	</style>
+</head>
+<body>
+	<p>使用css更改非inline-block元素为inline-block时候，会有空格分隔的现象</p>
+	<section>
+		<div>问题展示</div>
+		<!-- 两个div之间换行会导致有个白色的间距 -->
+		<div>1</div>
+	</section>
+	<!-- 方法1，添加注释 -->
+	<section>
+		<div>
+		添加注释的方法	
+		</div><!--
+		--><div>2</div>
+	</section>
+
+	<!-- 方法2，不用闭合标签 -->
+	<section>
+		<div>不使用闭合标签，但最后一个要使用，防止IE6、7出问题
+		</div><div>3</div>
+	</section>
+
+	<!-- 方法3，移除空格，整行显示  -->
+	<section>
+		<div>合并为1行</div><div>4</div>
+	</section>
+
+	<!-- 方法4，移除空格  -->
+	<section>	
+		<div>
+		合并为1行</div><div>
+		5</div>
+	</section>
+
+
+	<!-- 方法5，更改margin值 -->
+	<section>
+		<div class="fmargin">使用负margin</div>
+		<div class="fmargin">6</div>
+	</section>
+
+	<!-- 方法6，父对象使用display: table chrome有效-->
+	<section class="container01">
+		<div>父对象使用display: table</div>
+		<div>7</div>
+	</section>
+
+	<!-- 方法7，font-size:0 -->
+	<section class="container02">
+		<div></div>
+		<div></div>
+	</section>
+
+	<!-- 方法8，letter-space:0 -->
+	<section class="container03">
+		<div></div>
+		<div>9</div>
+	</section>
+
+	<!-- 方法9，word-spaceing:0 -->
+	<section class="container04">
+		<div></div>
+		<div>10</div>
+	</section>
+	
+</body>
+</html>
